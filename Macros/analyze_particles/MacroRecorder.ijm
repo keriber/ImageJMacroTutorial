@@ -1,0 +1,12 @@
+open("/Users/keriabermudez/Desktop/ImageJ_macro_tutorial/Analysis/images/ID_000.tif");
+run("Split Channels");
+selectWindow("ID_000.tif (red)");
+setAutoThreshold("Otsu dark");
+//run("Threshold...");
+//setThreshold(73, 255);
+setOption("BlackBackground", true);
+run("Convert to Mask");
+run("Analyze Particles...", "display clear add");
+roiManager("Show All");
+roiManager("Show All with labels");
+saveAs("Results", "/Users/keriabermudez/Desktop/ImageJ_macro_tutorial/Analysis/ROIs/ID_000.xls");
